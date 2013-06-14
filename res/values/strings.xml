@@ -8,5 +8,7 @@
     <string name="title_activity_editar_campeonato">EditarCampeonatoActivity</string>
     <string name="title_activity_add_equipe">AddEquipe</string>
     <string name="title_activity_list">ListActivity</string>
+    <string name="title_activity_jogo">JogoActivity</string>
+    <string name="title_activity_cria_jogo">CriaJogoActivity</string>
 
 </resources>
