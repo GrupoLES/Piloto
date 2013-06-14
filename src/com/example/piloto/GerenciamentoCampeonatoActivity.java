@@ -14,6 +14,7 @@ public class GerenciamentoCampeonatoActivity extends Activity {
 	private Button botaoGerenciarJogos;
 	private Intent intentEditCamp;
 	private Intent intent;
+	private Intent intentJogo;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -26,6 +27,7 @@ public class GerenciamentoCampeonatoActivity extends Activity {
 		botaoGerenciarJogos = (Button) findViewById(R.id.botaoGerenciarJogos);
 		intentEditCamp = new Intent(this, EditarCampeonatoActivity.class);
 		intent = new Intent(this,AddEquipe.class);
+		intentJogo = new Intent(this,JogoActivity.class);
 		
 		botaoEditarCampeonato.setOnClickListener(new View.OnClickListener() {
 		
@@ -51,8 +53,8 @@ public class GerenciamentoCampeonatoActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				// TODO TELA DE JOGOS
-				
+				startActivity(intentJogo);
+				finish();
 			}
 			
 		});
