@@ -22,7 +22,6 @@ public class MainActivity extends Activity {
 	private Button botaoCriar;
 	public static Campeonato campeonato;
 	private Intent intent;
-	//comentario para testar commit!
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
