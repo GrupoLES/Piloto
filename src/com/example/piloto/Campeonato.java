@@ -13,7 +13,7 @@ public class Campeonato {
 	private Date dataFim;
 	private String premiacao;
 	private LinkedList<Equipes> equipes = new LinkedList<Equipes>();
-	private LinkedList<Jogos> jogos = new LinkedList<Jogos>();
+	private LinkedList<Jogo> jogos = new LinkedList<Jogo>();
 	
 
 	public Campeonato (int dia, int mes, int ano, String premiacao){
