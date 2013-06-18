@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import com.example.classes.logica.Equipe;
+import com.example.classes.logica.Repositorio;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -21,12 +24,23 @@ import android.widget.ListView;
 public class ListActivity extends Activity {
 	ArrayAdapter<String> listAdapter;
 	ArrayList<String> list;
+	Repositorio repo;
+	public List<String> getJogadores(List<Equipe> list){
+		
+		List<String> retorno = new ArrayList<String>();
+		
+		for (int i = 0; i < list.size(); i++) {
+			retorno.add(list.get(i).getNome());
+		}
+		return retorno;
+	}
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_list);
+		repo = Repositorio.getInstance();
 		ListView listview = (ListView) findViewById(R.id.listEquipe);
-		list = getIntent().getStringArrayListExtra("listaEquipes");
+		list = (ArrayList<String>) getJogadores(repo.getEquipes());
 		      
 	    // Create ArrayAdapter using the planet list.  
 	     listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list);  
@@ -58,8 +72,8 @@ public class ListActivity extends Activity {
 					
 				}
 			});
-		Button btnSalvar = (Button) findViewById(R.id.bataoAdd);
-		btn.setOnClickListener(new View.OnClickListener() {
+		Button btnAdd = (Button) findViewById(R.id.bataoAdd);
+		btnAdd.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {

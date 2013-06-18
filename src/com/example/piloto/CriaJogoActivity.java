@@ -1,5 +1,8 @@
 package com.example.piloto;
 
+import com.example.classes.logica.Jogo;
+import com.example.classes.logica.Repositorio;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;

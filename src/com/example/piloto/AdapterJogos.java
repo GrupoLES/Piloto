@@ -3,6 +3,8 @@ package com.example.piloto;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.classes.logica.Jogo;
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,13 +41,13 @@ public class AdapterJogos extends BaseAdapter{
 
 	@Override
 	public View getView(int i, View view, ViewGroup viewGroup) {
-		 //Pega o item de acordo com a posção.
+		 //Pega o item de acordo com a posï¿½ï¿½o.
         Jogo item = jogos.get(i);
         //infla o layout para podermos preencher os dados
         view = mInflater.inflate(R.layout.activity_jogo, null);
  
         //atravez do layout pego pelo LayoutInflater, pegamos cada id relacionado
-        //ao item e definimos as informações.
+        //ao item e definimos as informaï¿½ï¿½es.
         
         //((TextView) view.findViewById(R.id.textList)).setText(item.toString());
  

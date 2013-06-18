@@ -3,6 +3,9 @@ package com.example.piloto;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.classes.logica.Jogo;
+import com.example.classes.logica.Repositorio;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;

@@ -26,7 +26,7 @@ public class GerenciamentoCampeonatoActivity extends Activity {
 		botaoGerenciarEquipes = (Button) findViewById(R.id.botaoGerenciarEquipes);
 		botaoGerenciarJogos = (Button) findViewById(R.id.botaoGerenciarJogos);
 		intentEditCamp = new Intent(this, EditarCampeonatoActivity.class);
-		intent = new Intent(this,AddEquipe.class);
+		intent = new Intent(this,ListActivity.class);
 		intentJogo = new Intent(this,JogoActivity.class);
 		
 		botaoEditarCampeonato.setOnClickListener(new View.OnClickListener() {

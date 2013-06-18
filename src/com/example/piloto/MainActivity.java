@@ -11,6 +11,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.example.classes.logica.Campeonato;
 import com.example.piloto.GerenciamentoCampeonatoActivity;
 
 public class MainActivity extends Activity {
@@ -41,7 +43,7 @@ public class MainActivity extends Activity {
 				campeonato = new Campeonato(Integer.parseInt(dia.getText().toString()),
 						Integer.parseInt(mes.getText().toString()), Integer.parseInt(ano.getText().toString()), premiacao.getText().toString());
 				AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
-				alert.setTitle("Confirmação");
+				alert.setTitle("Confirmaï¿½ï¿½o");
 				alert.setMessage("O campeonato foi criado com sucesso!");
 				alert.setNeutralButton("Iniciar Gerenciamento", new  DialogInterface.OnClickListener() {
 					public  void  onClick(DialogInterface dialog, int  whichButton) { 

@@ -1,4 +1,4 @@
-package com.example.piloto;
+package com.example.classes.logica;
 
 import java.util.Date;
 import java.util.LinkedList;
@@ -12,7 +12,7 @@ public class Campeonato {
 	private Date dataInicio;
 	private Date dataFim;
 	private String premiacao;
-	private LinkedList<Equipes> equipes = new LinkedList<Equipes>();
+	private LinkedList<Equipe> equipes = new LinkedList<Equipe>();
 	private LinkedList<Jogo> jogos = new LinkedList<Jogo>();
 	
 

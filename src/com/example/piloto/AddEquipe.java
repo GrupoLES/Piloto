@@ -3,6 +3,8 @@ package com.example.piloto;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.classes.logica.Repositorio;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -15,10 +17,13 @@ import android.widget.EditText;
 public class AddEquipe extends Activity {
 	List<String> listaDeEquipes;
 	EditText text;
+	Repositorio repo;
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_equipe);
+        repo = Repositorio.getInstance();
+        
         text = (EditText) findViewById(R.id.nameEquipe);
         Button botaoSalvarEquipe = (Button) findViewById(R.id.bataoSalvarEquipe);
         listaDeEquipes = new ArrayList<String>();
@@ -26,7 +31,7 @@ public class AddEquipe extends Activity {
 			
 			@Override
 			public void onClick(View arg0) {
-				listaDeEquipes.add(text.getText().toString());
+				repo.addEquipe(text.getText().toString());
 				System.out.println(listaDeEquipes.get(0));
 				Intent intent = new Intent(AddEquipe.this,ListActivity.class);
 				intent.putStringArrayListExtra("listaEquipes", (ArrayList<String>) listaDeEquipes);

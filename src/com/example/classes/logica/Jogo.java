@@ -1,4 +1,4 @@
-package com.example.piloto;
+package com.example.classes.logica;
 
 public class Jogo {
 	
