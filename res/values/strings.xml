@@ -10,5 +10,6 @@
     <string name="title_activity_list">ListActivity</string>
     <string name="title_activity_jogo">JogoActivity</string>
     <string name="title_activity_cria_jogo">CriaJogoActivity</string>
+    <string name="title_activity_edit_equipe">EditEquipeActivity</string>
 
 </resources>

@@ -17,19 +17,18 @@ public class EditEquipeActivity extends Activity {
 	Repositorio repo = Repositorio.getInstance();
 	String positionEquipe;
 	EditText nomeEquipe;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_edit_equipe);
 		nomeEquipe = (EditText) findViewById(R.id.nameEditEquipe);
 		positionEquipe = getIntent().getStringExtra("EquipeEdit");
-		
-		nomeEquipe.setText(repo.getEquipes().get(Integer.valueOf(positionEquipe)).getNome());
+		nomeEquipe.setText(repo.getEquipes()
+				.get(Integer.valueOf(positionEquipe)).getNome());
 		Button botaoSalvarAlteracao = (Button) findViewById(R.id.bataoSalvarAlteracao);
 		Button botaoEditVoltar = (Button) findViewById(R.id.bataoEditeVoltar);
-		
 		botaoSalvarAlteracao.setOnClickListener(new View.OnClickListener() {
-			
 			@Override
 			public void onClick(View v) {
 				repo.removeEquipe(Integer.valueOf(positionEquipe));
@@ -37,23 +36,21 @@ public class EditEquipeActivity extends Activity {
 				List<Equipe> list = repo.getEquipes();
 				list.remove(Integer.valueOf(positionEquipe));
 				repo.editList(list);
-				Intent it = new Intent(EditEquipeActivity.this,ListActivity.class);
+				Intent it = new Intent(EditEquipeActivity.this,
+						ListActivity.class);
 				startActivity(it);
 				finish();
-				
 			}
 		});
 		botaoEditVoltar.setOnClickListener(new View.OnClickListener() {
-			
 			@Override
 			public void onClick(View v) {
-				Intent it = new Intent(EditEquipeActivity.this,ListActivity.class);
+				Intent it = new Intent(EditEquipeActivity.this,
+						ListActivity.class);
 				startActivity(it);
 				finish();
-				
 			}
 		});
-		
 	}
 
 	@Override

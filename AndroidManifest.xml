@@ -50,6 +50,10 @@
             android:name="com.example.piloto.CriaJogoActivity"
             android:label="@string/title_activity_cria_jogo" >
         </activity>
+        <activity
+            android:name="com.example.piloto.EditEquipeActivity"
+            android:label="@string/title_activity_edit_equipe" >
+        </activity>
     </application>
 
 </manifest>
