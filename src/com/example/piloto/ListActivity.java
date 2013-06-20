@@ -20,6 +20,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class ListActivity extends Activity {
 	ArrayAdapter<String> listAdapter;
@@ -45,15 +46,23 @@ public class ListActivity extends Activity {
 	    // Create ArrayAdapter using the planet list.  
 	     listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list);  
 	      
-	    listview.setAdapter(listAdapter); 
+	    listview.setAdapter(listAdapter);
+	    listAdapter.notifyDataSetChanged();
 	    listview.setOnItemClickListener(new OnItemClickListener() {
 	        public void onItemClick(AdapterView<?> a, View v, int position, long id) {
 	            AlertDialog.Builder adb=new AlertDialog.Builder(ListActivity.this);
-	            adb.setTitle("Delete?");
-	            adb.setMessage("Deseja remover o time: " + list.get(position)+" ?");
+	            adb.setTitle("Equipe");
+	            adb.setMessage("O que deseja fazer com " + list.get(position)+" ?");
 	            final int positionToRemove = position;
-	            adb.setNegativeButton("Cancel", null);
-	            adb.setPositiveButton("Ok", new AlertDialog.OnClickListener() {
+	            final int positionEdit = position;
+	            adb.setNegativeButton("Editar", new AlertDialog.OnClickListener() {
+	                public void onClick(DialogInterface dialog, int which) {
+	                   Intent inte = new Intent(ListActivity.this,EditEquipeActivity.class);
+	                   inte.putExtra("EquipeEdit", positionEdit+"");
+	                   startActivity(inte);
+	                   finish();
+	                }});
+	            adb.setPositiveButton("Remover", new AlertDialog.OnClickListener() {
 	                public void onClick(DialogInterface dialog, int which) {
 	                    repo.removeEquipe(positionToRemove);
 	                    list.remove(positionToRemove);

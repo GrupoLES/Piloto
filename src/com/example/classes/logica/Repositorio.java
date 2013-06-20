@@ -36,7 +36,10 @@ public class Repositorio {
 		return equipes;
 	}
 	public void removeEquipe(Integer position){
-		equipes.remove(position);
+		equipes.remove((int)position);
+	}
+	public void editList(List<Equipe> novaList){
+		equipes = novaList;
 	}
 	
 }

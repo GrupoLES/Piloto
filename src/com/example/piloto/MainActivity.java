@@ -43,7 +43,7 @@ public class MainActivity extends Activity {
 				campeonato = new Campeonato(Integer.parseInt(dia.getText().toString()),
 						Integer.parseInt(mes.getText().toString()), Integer.parseInt(ano.getText().toString()), premiacao.getText().toString());
 				AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
-				alert.setTitle("Confirma��o");
+				alert.setTitle("Confirmação");
 				alert.setMessage("O campeonato foi criado com sucesso!");
 				alert.setNeutralButton("Iniciar Gerenciamento", new  DialogInterface.OnClickListener() {
 					public  void  onClick(DialogInterface dialog, int  whichButton) { 
