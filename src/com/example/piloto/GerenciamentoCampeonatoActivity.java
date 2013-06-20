@@ -15,6 +15,8 @@ public class GerenciamentoCampeonatoActivity extends Activity {
 	private Button botaoEditarCampeonato;
 	private Button botaoGerenciarEquipes;
 	private Button botaoGerenciarJogos;
+	private Button botaoFinalizar;
+	private Button listarCampeonatos;
 	private TextView nome;
 	private TextView data;
 	private TextView premiacao;
@@ -34,6 +36,8 @@ public class GerenciamentoCampeonatoActivity extends Activity {
 		premiacao = (TextView) findViewById(R.id.premiacaoView);
 		premiacao.setText(MainActivity.campeonato.getPremiacao());
 		
+		botaoFinalizar = (Button) findViewById(R.id.button1);
+		listarCampeonatos = (Button) findViewById(R.id.button2);
 		botaoEditarCampeonato = (Button) findViewById(R.id.botaoGerenciamentoCampeonato);
 		botaoGerenciarEquipes = (Button) findViewById(R.id.botaoGerenciarEquipes);
 		botaoGerenciarJogos = (Button) findViewById(R.id.botaoGerenciarJogos);
@@ -71,7 +75,15 @@ public class GerenciamentoCampeonatoActivity extends Activity {
 			
 		});
 		
-		
+		botaoFinalizar.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		});
 		
 	}
 	

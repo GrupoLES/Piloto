@@ -44,7 +44,7 @@ public class CadastraCampeonatoActivity extends Activity {
 				
 				
 				try {
-					//intent = setExtras(intent);
+					
 					MainActivity.campeonato = new Campeonato(Integer.parseInt(dia.getText().toString()),
 							Integer.parseInt(mes.getText().toString()), Integer.parseInt(ano.getText().toString()), premiacao.getText().toString(), nome.getText().toString());
 					
@@ -78,35 +78,6 @@ public class CadastraCampeonatoActivity extends Activity {
 		
 	}
 	
-private Intent setExtras(Intent intent){
-		String[] list = new String[5];
-		
-		if(! nome.getText().toString().equals("")){
-			String nomeEdited = nome.getText().toString();
-			list[0] = nomeEdited;
-		}else if(! dia.getText().toString().equals("")){
-			String diaEdited = dia.getText().toString();
-			list[1] = diaEdited;
-		}else if(! mes.getText().toString().equals("")){
-			String mesEdited = mes.getText().toString();
-			list[2] = mesEdited;
-		}else if(! ano.getText().toString().equals("")){
-			String anoEdited = ano.getText().toString();
-			list[3] = anoEdited;
-		}else if(! premiacao.getText().toString().equals("")){
-			String premiacaoEdited = premiacao.getText().toString();
-			list[4] = premiacaoEdited;
-		}else if( dia.getText().toString().equals("") && mes.getText().toString().equals("") && ano.getText().toString().equals("") ){
-			dia.setText(MainActivity.campeonato.getDataInicio().getDate());
-			mes.setText(MainActivity.campeonato.getDataInicio().getMonth());
-			ano.setText(MainActivity.campeonato.getDataInicio().getYear() - 1900);
-			
-		}
-		Bundle b = new Bundle();
-		b.putStringArray("valores", list);
-		intent.putExtras(b);
-		return intent;
-	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
