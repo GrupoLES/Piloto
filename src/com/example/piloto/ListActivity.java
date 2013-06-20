@@ -55,6 +55,7 @@ public class ListActivity extends Activity {
 	            adb.setNegativeButton("Cancel", null);
 	            adb.setPositiveButton("Ok", new AlertDialog.OnClickListener() {
 	                public void onClick(DialogInterface dialog, int which) {
+	                    repo.removeEquipe(positionToRemove);
 	                    list.remove(positionToRemove);
 	                	listAdapter.notifyDataSetChanged();
 	                }});

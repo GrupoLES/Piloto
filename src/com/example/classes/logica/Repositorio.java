@@ -35,5 +35,8 @@ public class Repositorio {
 	public List<Equipe> getEquipes(){
 		return equipes;
 	}
+	public void removeEquipe(Integer position){
+		equipes.remove(position);
+	}
 	
 }

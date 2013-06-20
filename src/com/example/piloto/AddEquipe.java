@@ -32,9 +32,7 @@ public class AddEquipe extends Activity {
 			@Override
 			public void onClick(View arg0) {
 				repo.addEquipe(text.getText().toString());
-				System.out.println(listaDeEquipes.get(0));
 				Intent intent = new Intent(AddEquipe.this,ListActivity.class);
-				intent.putStringArrayListExtra("listaEquipes", (ArrayList<String>) listaDeEquipes);
 				startActivity(intent);
 				finish();
 				
