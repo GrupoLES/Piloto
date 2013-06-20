@@ -48,24 +48,21 @@
         android:layout_marginTop="17dp"
         android:text="Data" />
 
-    <Button
-        android:id="@+id/botaoCriar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText3"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/editText3"
-        android:layout_marginBottom="23dp"
-        android:text="Criar" />
-
-    <EditText
-        android:id="@+id/editText3"
+    <DatePicker
+        android:id="@+id/datePicker1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView3"
         android:layout_below="@+id/textView3"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="20dp"
-        android:ems="10" />
+        android:layout_marginTop="14dp" />
+
+    <Button
+        android:id="@+id/botaoCriar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/datePicker1"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="23dp"
+        android:text="Criar" />
 
 </RelativeLayout>

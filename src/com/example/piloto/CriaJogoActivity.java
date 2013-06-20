@@ -1,6 +1,8 @@
 package com.example.piloto;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import android.app.Activity;
@@ -13,6 +15,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -26,12 +29,13 @@ public class CriaJogoActivity extends Activity {
 	private Intent intent;
 	private String equipe1;
 	private String equipe2;
-	private TextView data;
 	private Spinner spn1;
 	private Spinner spn2;
 	private ArrayAdapter<String> arrayAdapter1;
 	private ArrayAdapter<String> arrayAdapter2;
 	private List<String> equipes;
+	private DatePicker data;
+	private Calendar calendario;
 	
 	private void converteString(){
 		List<Equipe> aux = Repositorio.getInstance().getEquipes();
@@ -60,7 +64,7 @@ public class CriaJogoActivity extends Activity {
 		arrayAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spn2.setAdapter(arrayAdapter2);
 		
-		data = (TextView) findViewById(R.id.editText3);
+		data = (DatePicker) findViewById(R.id.datePicker1);
 		
 		spn1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 			 
@@ -92,7 +96,9 @@ public class CriaJogoActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				Repositorio.getInstance().addJogo(new Jogo(equipe1, equipe2, data.getText().toString()));
+				calendario = new GregorianCalendar();
+				calendario.set(data.getYear(), data.getMonth(), data.getDayOfMonth());
+				Repositorio.getInstance().addJogo(new Jogo(equipe1, equipe2, calendario));
 				AlertDialog.Builder adb=new AlertDialog.Builder(CriaJogoActivity.this);
 	            //adb.setTitle("Delete?");
 	            adb.setMessage("Cadastro concluido com sucesso!");
