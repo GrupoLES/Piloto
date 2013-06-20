@@ -1,25 +1,45 @@
 package com.example.piloto;
 
-import com.example.classes.logica.Jogo;
-import com.example.classes.logica.Repositorio;
+import java.util.ArrayList;
+import java.util.List;
 
-import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
+
+import com.example.classes.logica.Equipe;
+import com.example.classes.logica.Jogo;
+import com.example.classes.logica.Repositorio;
 
 public class CriaJogoActivity extends Activity {
 	
 	private Button botaoCriar;
 	private Intent intent;
-	private TextView equipe1;
-	private TextView equipe2;
+	private String equipe1;
+	private String equipe2;
 	private TextView data;
+	private Spinner spn1;
+	private Spinner spn2;
+	private ArrayAdapter<String> arrayAdapter1;
+	private ArrayAdapter<String> arrayAdapter2;
+	private List<String> equipes;
+	
+	private void converteString(){
+		List<Equipe> aux = Repositorio.getInstance().getEquipes();
+		equipes = new ArrayList<String>();
+		for (int i = 0; i < aux.size(); i++) {
+			equipes.add(aux.get(i).getNome());
+		}
+	}
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -28,16 +48,51 @@ public class CriaJogoActivity extends Activity {
 		
 		botaoCriar = (Button) findViewById(R.id.botaoCriar);
 		intent = new Intent(this,JogoActivity.class);
+		converteString();
 		
-		equipe1 = (TextView) findViewById(R.id.editText1);
-		equipe2 = (TextView) findViewById(R.id.editText2);
+		spn1 = (Spinner) findViewById(R.id.spinner1);
+		arrayAdapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, equipes);
+		arrayAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		spn1.setAdapter(arrayAdapter1);
+		
+		spn2 = (Spinner) findViewById(R.id.spinner2);
+		arrayAdapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, equipes);
+		arrayAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		spn2.setAdapter(arrayAdapter2);
+		
 		data = (TextView) findViewById(R.id.editText3);
+		
+		spn1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+			 
+			@Override
+			public void onItemSelected(AdapterView<?> parent, View v, int posicao, long id) {
+				equipe1 = parent.getItemAtPosition(posicao).toString();
+			}
+ 
+			@Override
+			public void onNothingSelected(AdapterView<?> parent) {
+ 
+			}
+		});
+		
+		spn2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+			 
+			@Override
+			public void onItemSelected(AdapterView<?> parent, View v, int posicao, long id) {
+				equipe2 = parent.getItemAtPosition(posicao).toString();
+			}
+ 
+			@Override
+			public void onNothingSelected(AdapterView<?> parent) {
+ 
+			}
+		});
 		
 		botaoCriar.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				Repositorio.getInstance().addJogo(new Jogo(equipe1.getText().toString(),equipe2.getText().toString(), data.getText().toString()));
+				Repositorio.getInstance().addJogo(new Jogo(equipe1, equipe2, data.getText().toString()));
 				AlertDialog.Builder adb=new AlertDialog.Builder(CriaJogoActivity.this);
 	            //adb.setTitle("Delete?");
 	            adb.setMessage("Cadastro concluido com sucesso!");
