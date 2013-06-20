@@ -17,46 +17,43 @@ import com.example.piloto.GerenciamentoCampeonatoActivity;
 
 public class MainActivity extends Activity {
 
-	private EditText dia;
-	private EditText mes;
-	private EditText ano;
-	private EditText premiacao;
-	private Button botaoCriar;
+	private Button novoCampeonato;
+	private Button campeonatoExistente;
+	private Intent intentNovoCamp;
+	private Intent intentExistenteCamp;
 	public static Campeonato campeonato;
-	private Intent intent;
+	
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        dia = (EditText) findViewById(R.id.editText1);
-        mes = (EditText) findViewById(R.id.editText2);
-        ano = (EditText) findViewById(R.id.editText3);
-        premiacao = (EditText) findViewById(R.id.editText4);
-        intent = new Intent(this, GerenciamentoCampeonatoActivity.class);
-        botaoCriar = (Button) findViewById(R.id.botaoCriar);
-        botaoCriar.setOnClickListener(new View.OnClickListener() {
-			
+        
+        novoCampeonato = (Button) findViewById(R.id.novoCampeonatoBotao);
+        campeonatoExistente = (Button) findViewById(R.id.campExistenteBotao);
+        intentNovoCamp = new Intent(this, CadastraCampeonatoActivity.class);
+        intentExistenteCamp = new Intent(this, GerenciamentoCampeonatoActivity.class);
+        
+        novoCampeonato.setOnClickListener(new View.OnClickListener() {
+
 			@Override
 			public void onClick(View v) {
-				
-				
-				campeonato = new Campeonato(Integer.parseInt(dia.getText().toString()),
-						Integer.parseInt(mes.getText().toString()), Integer.parseInt(ano.getText().toString()), premiacao.getText().toString());
-				AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
-				alert.setTitle("Confirmação");
-				alert.setMessage("O campeonato foi criado com sucesso!");
-				alert.setNeutralButton("Iniciar Gerenciamento", new  DialogInterface.OnClickListener() {
-					public  void  onClick(DialogInterface dialog, int  whichButton) { 
-						startActivity(intent);
-						finish();
-					}
-				});
-				alert.show();
+				startActivity(intentNovoCamp);
 				
 			}
-		});
+        	
+        });
         
-        
+        campeonatoExistente.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				//TODO rotina de captura de campeonatos!
+				startActivity(intentExistenteCamp);
+				
+			}
+        	
+        });
         
     }
 

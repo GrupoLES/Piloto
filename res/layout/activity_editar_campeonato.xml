@@ -14,7 +14,17 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:text="Editar Informações do Campeonato"
+        android:text="Editar informações do campeonato"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:text="MES"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
@@ -23,29 +33,19 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/textView2"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="14dp"
         android:ems="10"
-        android:inputType="number"
-        android:maxLength="2" />
+        android:inputType="number" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText1"
+        android:layout_alignLeft="@+id/diaEditLabel"
         android:layout_below="@+id/textView1"
-        android:layout_marginLeft="17dp"
-        android:layout_marginTop="37dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="41dp"
         android:text="DIA"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_centerHorizontal="true"
-        android:text="Mes"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
@@ -56,8 +56,7 @@
         android:layout_alignBottom="@+id/diaEditLabel"
         android:layout_centerHorizontal="true"
         android:ems="10"
-        android:inputType="number"
-        android:maxLength="2" >
+        android:inputType="number" >
 
         <requestFocus />
     </EditText>
@@ -68,10 +67,9 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/mesEditLabel"
         android:layout_alignBottom="@+id/mesEditLabel"
-        android:layout_alignParentRight="true"
+        android:layout_alignRight="@+id/textView1"
         android:ems="10"
-        android:inputType="number"
-        android:maxLength="4" />
+        android:inputType="number" />
 
     <TextView
         android:id="@+id/textView4"
@@ -79,35 +77,55 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/diaEditLabel"
         android:layout_alignLeft="@+id/anoEditLabel"
-        android:layout_marginLeft="16dp"
-        android:text="Ano"
+        android:layout_marginLeft="15dp"
+        android:text="ANO"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/diaEditLabel"
-        android:layout_centerVertical="true"
-        android:text="Premiação"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/diaEditLabel"
+        android:layout_marginTop="30dp"
+        android:text="Novo Nome"
         android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/novoNomeEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView5"
+        android:layout_below="@+id/textView5"
+        android:layout_marginTop="19dp"
+        android:ems="10" />
 
     <EditText
         android:id="@+id/premiacaoEditLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView5"
-        android:layout_below="@+id/textView5"
-        android:layout_marginTop="16dp"
+        android:layout_alignLeft="@+id/novoNomeEdit"
+        android:layout_below="@+id/novoNomeEdit"
+        android:layout_marginTop="52dp"
         android:ems="10" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editText2"
+        android:layout_below="@+id/novoNomeEdit"
+        android:layout_marginTop="20dp"
+        android:text="Nova Premiação"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <Button
         android:id="@+id/botaoEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/premiacaoEditLabel"
         android:layout_below="@+id/premiacaoEditLabel"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="57dp"
-        android:text="Salvar alterações" />
+        android:layout_marginTop="24dp"
+        android:text="Salvar Alterações" />
 
 </RelativeLayout>

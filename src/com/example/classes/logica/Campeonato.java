@@ -12,19 +12,28 @@ public class Campeonato {
 	private Date dataInicio;
 	private Date dataFim;
 	private String premiacao;
+	private String nome;
 	private LinkedList<Equipe> equipes = new LinkedList<Equipe>();
 	private LinkedList<Jogo> jogos = new LinkedList<Jogo>();
 	
 
-	public Campeonato (int dia, int mes, int ano, String premiacao){
+	public Campeonato (int dia, int mes, int ano, String premiacao, String nome){
 		this.dia = dia;
 		this.mes = mes;
 		this.ano = ano;
 		this.premiacao = premiacao;
+		this.nome = nome;
 		this.dataInicio = new Date(ano, mes, dia);
 		
 	}
 	
+	public String getNome(){
+		return nome;
+	}
+	
+	public void setNome(String nome){
+		this.nome = nome;
+	}
 	
 	public String getPremiacao(){
 		return this.premiacao;
@@ -45,7 +54,7 @@ public class Campeonato {
 	}
 	
 	public void setDataInicio(int dia, int mes, int ano){
-		dataInicio = new Date(ano, mes, dia);
+		this.dataInicio = new Date(ano, mes, dia);
 	}
 	
 	public void setDataFim(int dia, int mes, int ano){

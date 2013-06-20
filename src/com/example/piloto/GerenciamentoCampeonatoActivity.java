@@ -1,25 +1,37 @@
 package com.example.piloto;
 
+import java.util.ArrayList;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class GerenciamentoCampeonatoActivity extends Activity {
 	
 	private Button botaoEditarCampeonato;
 	private Button botaoGerenciarEquipes;
 	private Button botaoGerenciarJogos;
+	private TextView nome;
+	private TextView data;
 	private Intent intentEditCamp;
 	private Intent intent;
 	private Intent intentJogo;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_gerenciamento_campeonato);
-		
+		Bundle b = this.getIntent().getExtras();
+		String[] valores = b.getStringArray("valores");
+		nome = (TextView) findViewById(R.id.nomeView);
+		nome.setText(valores[0]);
+		System.out.println("dados: " + valores[1]);
+		data = (TextView) findViewById(R.id.dataInicioView);
+		//data.setText(diaString);
 		
 		
 		botaoEditarCampeonato = (Button) findViewById(R.id.botaoGerenciamentoCampeonato);
@@ -62,6 +74,7 @@ public class GerenciamentoCampeonatoActivity extends Activity {
 		
 		
 	}
+	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

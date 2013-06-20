@@ -46,4 +46,44 @@
         android:layout_marginTop="52dp"
         android:text="Gerenciar Jogos" />
 
+    <TextView
+        android:id="@+id/nomeCamp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/botaoGerenciarJogos"
+        android:layout_below="@+id/botaoGerenciarJogos"
+        android:layout_marginTop="30dp"
+        android:text="Nome: "
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/nomeView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/nomeCamp"
+        android:layout_marginLeft="16dp"
+        android:layout_toRightOf="@+id/nomeCamp"
+        android:text="    "   
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/nomeCamp"
+        android:layout_below="@+id/nomeCamp"
+        android:layout_marginTop="14dp"
+        android:text="Data Inicio: "
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/dataInicioView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_marginLeft="24dp"
+        android:layout_toRightOf="@+id/textView2"
+        android:text="       "
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
 </RelativeLayout>
