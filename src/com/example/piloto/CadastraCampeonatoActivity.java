@@ -44,7 +44,7 @@ public class CadastraCampeonatoActivity extends Activity {
 				
 				
 				try {
-					intent = setExtras(intent);
+					//intent = setExtras(intent);
 					MainActivity.campeonato = new Campeonato(Integer.parseInt(dia.getText().toString()),
 							Integer.parseInt(mes.getText().toString()), Integer.parseInt(ano.getText().toString()), premiacao.getText().toString(), nome.getText().toString());
 					

@@ -12,5 +12,6 @@
     <string name="title_activity_cria_jogo">CriaJogoActivity</string>
     <string name="title_activity_edit_equipe">EditEquipeActivity</string>
     <string name="title_activity_cadastra_campeonato">CadastraCampeonatoActivity</string>
+    <string name="title_activity_lista_campeonatos">ListaCampeonatosActivity</string>
 
 </resources>

@@ -45,11 +45,11 @@ public class EditarCampeonatoActivity extends Activity {
 				
 				
 				try {
-					intent = setExtras(intent);
+					//intent = setExtras(intent);
 					MainActivity.campeonato.setDataInicio(Integer.parseInt(dia.getText().toString()),
 							Integer.parseInt(mes.getText().toString()), Integer.parseInt(ano.getText().toString()));
-					MainActivity.campeonato.setPremiacao(premiacao.toString());
-					MainActivity.campeonato.setNome(nome.toString());
+					MainActivity.campeonato.setPremiacao(premiacao.getText().toString());
+					MainActivity.campeonato.setNome(nome.getText().toString());
 				} catch (Exception e) {
 					AlertDialog.Builder alertError = new AlertDialog.Builder(EditarCampeonatoActivity.this);
 					alertError.setTitle("Erro na Data");

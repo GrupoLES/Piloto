@@ -17,6 +17,7 @@ public class GerenciamentoCampeonatoActivity extends Activity {
 	private Button botaoGerenciarJogos;
 	private TextView nome;
 	private TextView data;
+	private TextView premiacao;
 	private Intent intentEditCamp;
 	private Intent intent;
 	private Intent intentJogo;
@@ -25,14 +26,13 @@ public class GerenciamentoCampeonatoActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_gerenciamento_campeonato);
-		Bundle b = this.getIntent().getExtras();
-		String[] valores = b.getStringArray("valores");
-		nome = (TextView) findViewById(R.id.nomeView);
-		nome.setText(valores[0]);
-		System.out.println("dados: " + valores[1]);
-		data = (TextView) findViewById(R.id.dataInicioView);
-		//data.setText(diaString);
 		
+		nome = (TextView) findViewById(R.id.nomeView);
+		nome.setText(MainActivity.campeonato.getNome());
+		data = (TextView) findViewById(R.id.dataInicioView);
+		data.setText(MainActivity.campeonato.getDataInicio().getDate() + "/" + MainActivity.campeonato.getDataInicio().getMonth() + "/" + MainActivity.campeonato.getDataInicio().getYear());
+		premiacao = (TextView) findViewById(R.id.premiacaoView);
+		premiacao.setText(MainActivity.campeonato.getPremiacao());
 		
 		botaoEditarCampeonato = (Button) findViewById(R.id.botaoGerenciamentoCampeonato);
 		botaoGerenciarEquipes = (Button) findViewById(R.id.botaoGerenciarEquipes);
