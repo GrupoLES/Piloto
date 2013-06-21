@@ -14,5 +14,7 @@
     <string name="title_activity_cadastra_campeonato">CadastraCampeonatoActivity</string>
     <string name="title_activity_lista_campeonatos">ListaCampeonatosActivity</string>
     <string name="title_activity_editar_jogo">EditarJogoActivity</string>
+    <string name="title_activity_cadastra_campeonato2">CadastraCampeonato2</string>
+    <string name="title_activity_editar_campeonato2">EditarCampeonato2</string>
 
 </resources>

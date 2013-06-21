@@ -14,9 +14,6 @@ import android.widget.EditText;
 public class EditarCampeonatoActivity extends Activity {
 	
 	
-	private EditText dia;
-	private EditText mes;
-	private EditText ano;
 	private EditText nome;
 	private EditText premiacao;
 	private Button botaoSalvar;
@@ -27,9 +24,6 @@ public class EditarCampeonatoActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_editar_campeonato);
 		
-		dia = (EditText) findViewById(R.id.diaEditLabel);
-        mes = (EditText) findViewById(R.id.mesEditLabel);
-        ano = (EditText) findViewById(R.id.anoEditLabel);
         nome = (EditText) findViewById(R.id.novoNomeEdit);
         
         premiacao = (EditText) findViewById(R.id.premiacaoEditLabel);
@@ -41,24 +35,10 @@ public class EditarCampeonatoActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				
-				
-				
-				
-				try {
 					
-					MainActivity.campeonato.setDataInicio(Integer.parseInt(dia.getText().toString()),
-							Integer.parseInt(mes.getText().toString()), Integer.parseInt(ano.getText().toString()));
-					MainActivity.campeonato.setPremiacao(premiacao.getText().toString());
-					MainActivity.campeonato.setNome(nome.getText().toString());
-				} catch (Exception e) {
-					AlertDialog.Builder alertError = new AlertDialog.Builder(EditarCampeonatoActivity.this);
-					alertError.setTitle("Erro na Data");
-					alertError.setMessage("O campo da Data possui erros de preenchimento!");
-					alertError.setNeutralButton("Voltar para a edição", null);
-					alertError.show();
-					return;
+				MainActivity.campeonato.setPremiacao(premiacao.getText().toString());
+				MainActivity.campeonato.setNome(nome.getText().toString());
 
-				}
 				AlertDialog.Builder alert = new AlertDialog.Builder(EditarCampeonatoActivity.this);
 				alert.setTitle("Confirmação");
 				alert.setMessage("O campeonato foi editado com sucesso!");

@@ -66,6 +66,14 @@
             android:name="com.example.piloto.EditarJogoActivity"
             android:label="@string/title_activity_editar_jogo" >
         </activity>
+        <activity
+            android:name="com.example.piloto.CadastraCampeonato2"
+            android:label="@string/title_activity_cadastra_campeonato2" >
+        </activity>
+        <activity
+            android:name="com.example.piloto.EditarCampeonato2"
+            android:label="@string/title_activity_editar_campeonato2" >
+        </activity>
     </application>
 
 </manifest>

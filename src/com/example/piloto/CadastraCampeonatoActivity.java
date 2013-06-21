@@ -1,6 +1,8 @@
 package com.example.piloto;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 import com.example.classes.logica.Campeonato;
 
@@ -12,6 +14,7 @@ import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 
 public class CadastraCampeonatoActivity extends Activity {
@@ -21,23 +24,25 @@ public class CadastraCampeonatoActivity extends Activity {
 	private EditText ano;
 	private EditText nome;
 	private EditText premiacao;
-	private Button botaoCriar;
+	private Button botaoProximo;
 	private Intent intent;
-	
+	private DatePicker data;
+	private Calendar calendario;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_cadastra_campeonato);
-		dia = (EditText) findViewById(R.id.cadastroDia);
-        mes = (EditText) findViewById(R.id.cadastraMes);
-        ano = (EditText) findViewById(R.id.cadastroAno);
-        nome = (EditText) findViewById(R.id.campeonatoNome);
-        premiacao = (EditText) findViewById(R.id.campPremiacao);
-        intent = new Intent(this, GerenciamentoCampeonatoActivity.class);
-        botaoCriar = (Button) findViewById(R.id.botaoCriar);
-        botaoCriar.setOnClickListener(new View.OnClickListener() {
-
+       // nome = (EditText) findViewById(R.id.campeonatoNome);
+       // premiacao = (EditText) findViewById(R.id.campPremiacao);
+        intent = new Intent(this, CadastraCampeonato2.class);
+        botaoProximo = (Button) findViewById(R.id.botaoProximo);
+        data = (DatePicker) findViewById(R.id.datePicker1);
+        calendario = new GregorianCalendar();
+        calendario.set(data.getYear(), data.getMonth(), data.getDayOfMonth());
+        
+        botaoProximo.setOnClickListener(new View.OnClickListener() {
+        	
 			@Override
 			public void onClick(View arg0) {
 				
@@ -45,8 +50,8 @@ public class CadastraCampeonatoActivity extends Activity {
 				
 				try {
 					
-					MainActivity.campeonato = new Campeonato(Integer.parseInt(dia.getText().toString()),
-							Integer.parseInt(mes.getText().toString()), Integer.parseInt(ano.getText().toString()), premiacao.getText().toString(), nome.getText().toString());
+					MainActivity.campeonato = new Campeonato((data.getDayOfMonth()),
+							data.getMonth(), data.getYear(), "", "");
 					
 				} catch (Exception e) {
 					AlertDialog.Builder alertError = new AlertDialog.Builder(CadastraCampeonatoActivity.this);
@@ -56,18 +61,7 @@ public class CadastraCampeonatoActivity extends Activity {
 					alertError.show();
 					return;
 				}
-				
-				
-				AlertDialog.Builder alert = new AlertDialog.Builder(CadastraCampeonatoActivity.this);
-				alert.setTitle("Confirmação");
-				alert.setMessage("O campeonato foi criado com sucesso!");
-				alert.setNeutralButton("Iniciar Gerenciamento", new  DialogInterface.OnClickListener() {
-					public  void  onClick(DialogInterface dialog, int  whichButton) { 
-						startActivity(intent);
-						finish();
-					}
-				});
-				alert.show();
+				startActivity(intent);
 				
 			}
         	

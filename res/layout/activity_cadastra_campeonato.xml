@@ -12,123 +12,27 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="14dp"
-        android:text="Cadastro de Novo Campeonato"
+        android:layout_centerHorizontal="true"
+        android:text="Cadastrar Campeonato"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <EditText
-        android:id="@+id/cadastroDia"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/TextView01"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:inputType="number"
-        android:maxLength="2" >
-
-        <requestFocus />
-    </EditText>
-
-    <TextView
-        android:id="@+id/TextView01"
+    <DatePicker
+        android:id="@+id/datePicker1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignParentLeft="true"
         android:layout_below="@+id/textView1"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="29dp"
-        android:text="DIA"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/cadastroDia"
-        android:layout_centerHorizontal="true"
-        android:text="MES"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <EditText
-        android:id="@+id/cadastraMes"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/cadastroDia"
-        android:layout_alignBottom="@+id/cadastroDia"
-        android:layout_centerHorizontal="true"
-        android:ems="10"
-        android:inputType="number"
-        android:maxLength="2" />
-
-    <EditText
-        android:id="@+id/cadastroAno"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/cadastraMes"
-        android:layout_alignBottom="@+id/cadastraMes"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="18dp"
-        android:ems="10"
-        android:inputType="number"
-        android:maxLength="4" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/cadastroDia"
-        android:layout_alignRight="@+id/textView1"
-        android:layout_marginRight="14dp"
-        android:text="ANO"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/cadastroDia"
-        android:layout_below="@+id/cadastroDia"
-        android:layout_marginTop="42dp"
-        android:text="Nome do Campeonato"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <EditText
-        android:id="@+id/campeonatoNome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView4"
-        android:layout_below="@+id/textView4"
-        android:layout_marginTop="18dp"
-        android:ems="10" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/campeonatoNome"
-        android:layout_below="@+id/campeonatoNome"
-        android:layout_marginTop="22dp"
-        android:text="Premiação"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <EditText
-        android:id="@+id/campPremiacao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView5"
-        android:layout_below="@+id/textView5"
-        android:layout_marginTop="20dp"
-        android:ems="10" />
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="107dp" />
 
     <Button
-        android:id="@+id/botaoCriar"
+        android:id="@+id/botaoProximo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="Criar Campeonato" />
+        android:layout_marginBottom="20dp"
+        android:text="Proximo" />
 
 </RelativeLayout>

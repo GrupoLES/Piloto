@@ -6,62 +6,66 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".EditarCampeonatoActivity" >
+    tools:context=".CadastraCampeonato2" >
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:text="Editar informações do campeonato"
+        android:layout_centerHorizontal="true"
+        android:text="Cadastra Campeonato"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
         android:layout_below="@+id/textView1"
-        android:layout_marginTop="30dp"
-        android:text="Novo Nome"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:layout_marginTop="95dp"
+        android:layout_toLeftOf="@+id/textView1"
+        android:text="Nome"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <EditText
-        android:id="@+id/novoNomeEdit"
+        android:id="@+id/campeonatoNome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView5"
-        android:layout_below="@+id/textView5"
-        android:layout_marginTop="19dp"
-        android:ems="10" />
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_marginLeft="22dp"
+        android:ems="10" >
 
-    <EditText
-        android:id="@+id/premiacaoEditLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/novoNomeEdit"
-        android:layout_below="@+id/novoNomeEdit"
-        android:layout_marginTop="52dp"
-        android:ems="10" />
+        <requestFocus />
+    </EditText>
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText2"
-        android:layout_below="@+id/novoNomeEdit"
-        android:layout_marginTop="20dp"
-        android:text="Nova Premiação"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:layout_below="@+id/campeonatoNome"
+        android:layout_marginTop="36dp"
+        android:layout_toLeftOf="@+id/editText1"
+        android:text="Premiacao"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:id="@+id/campPremiacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignLeft="@+id/campeonatoNome"
+        android:ems="10" />
 
     <Button
-        android:id="@+id/botaoEdit"
+        android:id="@+id/botaoCriar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="82dp"
-        android:text="Salvar Alterações" />
+        android:layout_marginBottom="67dp"
+        android:text="Criar Campeonato" />
 
 </RelativeLayout>

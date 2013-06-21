@@ -1,5 +1,9 @@
 package com.example.piloto;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -22,6 +26,7 @@ public class MainActivity extends Activity {
 	private Intent intentNovoCamp;
 	private Intent intentExistenteCamp;
 	public static Campeonato campeonato;
+	public static LinkedList<Campeonato> listaCampeonato = new LinkedList<Campeonato>();
 	
 	
     @Override
@@ -48,8 +53,17 @@ public class MainActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				//TODO rotina de captura de campeonatos!
-				startActivity(intentExistenteCamp);
+				if(campeonato != null && campeonato.getState()){
+					startActivity(intentExistenteCamp);
+				}else{
+					AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
+					alert.setTitle("Alerta");
+					alert.setMessage("Não existe Campeonato em andamento!");
+					alert.setNeutralButton("Voltar", null);
+					alert.show();
+				}
+					
+				
 				
 			}
         	

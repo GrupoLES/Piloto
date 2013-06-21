@@ -15,6 +15,7 @@ public class Campeonato {
 	private String nome;
 	private LinkedList<Equipe> equipes = new LinkedList<Equipe>();
 	private LinkedList<Jogo> jogos = new LinkedList<Jogo>();
+	private Boolean state = true;
 	
 
 	public Campeonato (int dia, int mes, int ano, String premiacao, String nome){
@@ -25,6 +26,14 @@ public class Campeonato {
 		this.nome = nome;
 		this.dataInicio = new Date(ano, mes, dia);
 		
+	}
+	
+	public boolean getState(){
+		return state;
+	}
+	
+	public void setState(boolean state){
+		this.state = state;
 	}
 	
 	public String getNome(){
@@ -61,12 +70,22 @@ public class Campeonato {
 		dataFim = new Date(ano, mes, dia);	
 	}
 	
-	public String toString(Date data){
-		int dia = data.getDate();
-		int mes = data.getMonth();
-		int ano = data.getYear();
-		return Integer.toString(dia) + " - " + Integer.toString(mes) + " - " + Integer.toString(ano);
+	public String toString(){
+		int dia = dataFim.getDate();
+		int mes = dataFim.getMonth() + 1;
+		int ano = dataFim.getYear() + 1900;
+		return this.nome + " - Finalizado: " + Integer.toString(dia) + " / " + Integer.toString(mes) + " / " + Integer.toString(ano);
 		
+		
+	}
+	
+	public int[] getDates(Date data){
+		int[] array = new int[3];
+		array[0] = data.getDate();
+		array[1] = data.getMonth() + 1;
+		array[2] = data.getYear();
+		
+		return array;
 		
 	}
 
