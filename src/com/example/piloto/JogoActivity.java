@@ -23,6 +23,7 @@ public class JogoActivity extends Activity {
 	
 	private Button botaoCadastra;
 	private Intent intent;
+	private Intent intentEditar;
 	private ArrayAdapter<String> listAdapter;
 	private Repositorio repositorio;
 	private List<String> list;
@@ -40,10 +41,12 @@ public class JogoActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
 		setContentView(R.layout.activity_jogo);
 		
 		botaoCadastra = (Button) findViewById(R.id.botaoCadastraJogo);
 		intent = new Intent(this,CriaJogoActivity.class);
+		intentEditar = new Intent(this,EditarJogoActivity.class);
 		
 		repositorio = Repositorio.getInstance();
 		final ListView listView = (ListView) findViewById(R.id.listView1);
@@ -58,18 +61,9 @@ public class JogoActivity extends Activity {
 		
 		listView.setOnItemClickListener(new OnItemClickListener() {
 	        public void onItemClick(AdapterView<?> a, View v, int position, long id) {
-	            AlertDialog.Builder adb=new AlertDialog.Builder(JogoActivity.this);
-	            adb.setTitle("Delete?");
-	            adb.setMessage("Deseja remover o jogo: " + list.get(position)+" ?");
-	            final int positionToRemove = position;
-	            adb.setNegativeButton("Cancel", null);
-	            adb.setPositiveButton("Ok", new AlertDialog.OnClickListener() {
-	                public void onClick(DialogInterface dialog, int which) {
-	                    list.remove(positionToRemove);
-	                	listAdapter.notifyDataSetChanged();
-	                }});
-	            adb.show();
-	        	
+	        	intentEditar.putExtra("position", position);
+	        	startActivity(intentEditar);
+	        	finish();
 	            }
 	        });
 		
@@ -79,6 +73,7 @@ public class JogoActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				startActivity(intent);
+				finish();
 			}
 			
 		});

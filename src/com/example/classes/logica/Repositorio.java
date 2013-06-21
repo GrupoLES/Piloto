@@ -42,4 +42,8 @@ public class Repositorio {
 		equipes = novaList;
 	}
 	
+	public void removeJogo(int i){
+		jogos.remove(i);
+	}
+	
 }

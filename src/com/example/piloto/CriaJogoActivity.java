@@ -105,6 +105,7 @@ public class CriaJogoActivity extends Activity {
 	            adb.setPositiveButton("Ok", new AlertDialog.OnClickListener() {
 	                public void onClick(DialogInterface dialog, int which) {
 	                	startActivity(intent);
+	                	finish();
 	                }});
 	            adb.show();
 			}

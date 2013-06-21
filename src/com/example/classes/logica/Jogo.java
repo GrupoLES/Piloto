@@ -24,4 +24,20 @@ public class Jogo {
 	public String toString(){
 		return equipe1 + " x " + equipe2 + "    " + formataData();
 	}
+	
+	public String getEquipe1(){
+		return equipe1;
+	}
+	
+	public String getEquipe2(){
+		return equipe2;
+	}
+	
+	public Calendar getData(){
+		return data;
+	}
+	
+	public void setCalendar(Calendar novaData){
+		data = novaData;
+	}
 }
