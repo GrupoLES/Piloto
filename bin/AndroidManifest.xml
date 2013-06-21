@@ -62,6 +62,10 @@
             android:name="com.example.piloto.ListaCampeonatosActivity"
             android:label="@string/title_activity_lista_campeonatos" >
         </activity>
+        <activity
+            android:name="com.example.piloto.EditarJogoActivity"
+            android:label="@string/title_activity_editar_jogo" >
+        </activity>
     </application>
 
 </manifest>
